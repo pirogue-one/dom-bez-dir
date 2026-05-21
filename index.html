@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 </head>
 
@@ -43,8 +44,12 @@
             <button id="link-popup" class="btn_green">Связаться</button>
             <div class="modal_menu-pop-up-phone">
                 <div class="modal_menu-bg-pop-up-phone">
-                    <img id="close-pop-up-phone" class="modal-btn-back-pop-up" src="./images/close.png"
-                        alt="кнопка назад в модальном меню" width="35">
+                    <svg id="close-pop-up-phone" class="modal-btn-back-pop-up" aria-label="закрыть модальное окно"
+                        xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px"
+                        fill="#232323">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg>
                     <div class="modal_menu-container-pop-up-phone">
                         <div class="text-popup-container">
                             <p class="title-popup">Вы можете связаться с нами по указанным телефонам</p>
@@ -70,12 +75,16 @@
                         <p class="hero_under-title">
                             Наша миссия&nbsp;&mdash; обеспечить надежность и&nbsp;долговечность вашего&nbsp;дома.</p>
                     </div>
-                    <button class="btn_green">Заказать</button>
+                    <button class="btn_green" id="link-popup-hero">Заказать</button>
                 </div>
                 <div class="modal_menu-pop-up">
                     <div class="modal_menu-bg-pop-up">
-                        <img id="close-pop-up" class="modal-btn-back-pop-up" src="./images/close.png"
-                            alt="кнопка назад в модальном меню" width="35">
+                        <svg id="close-pop-up" class="modal-btn-back-pop-up" aria-label="закрыть модальное окно"
+                            xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px"
+                            fill="#232323">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
                         <div class="modal_menu-container-pop-up">
                             <div class="text-popup-container">
                                 <p class="title-popup">Сделайте заказ
@@ -97,9 +106,6 @@
                                 <img class="popup_img-ozon" src="./images/Ozon_logo_clear.png" alt="ozon">
                                 <img class="popup_img-yandex" src="./images/yandex_logo.png" alt="yandex">
                             </div>
-                            <div class="popup-pic-wrapper">
-                                <img class="pop-up-pic" src="./images/pics-popup.png" alt="pop-up">
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -112,9 +118,11 @@
     <main>
         <div class="section-bg">
             <section class="goods">
-                <p class="goods_title-over title-over__fixed">Продукция</p>
+                <div class="title-over-fixed-wrapper">
+                    <p class="goods_title-over title-over-fixed">Продукция</p>
+                </div>
                 <div class="goods_container-group">
-                    <div class="goods_text-container">
+                    <div class="goods_text-container goods_text-container-fixed">
                         <div class="goods_title-container">
                             <h2 class="goods_title">Пружинные узлы</h2>
                         </div>
@@ -174,7 +182,7 @@
                     </div>
                 </div>
                 <div class="goods_container-group">
-                    <h2 class="goods_title goods_text-container">Сверла</h2>
+                    <h2 class="goods_title goods_text-container goods_text-container-fixed">Сверла</h2>
                     <div class="cards_goods">
                         <div class="card_goods">
                             <img class="card_goods-img" src="./images/card1.png" alt="">
@@ -249,7 +257,7 @@
                     </div>
                 </div>
                 <div class="goods_container-group">
-                    <h2 class="goods_title goods_text-container">Ключи</h2>
+                    <h2 class="goods_title goods_text-container goods_text-container-fixed">Ключи</h2>
                     <div class="cards_goods">
                         <div class="card_goods">
                             <img class="card_goods-img" src="./images/card1.png" alt="">
@@ -373,14 +381,46 @@
                                 сжатие.
                             </p>
                             <img class="sertification_img" src="./images/sertif.png" alt="сертификация">
-                            <p class="sertification_text">Диапазон нагрузок от 0,2% до 100% от номинального значения
-                                датчика
-                                измерения силы. Например, датчик силы с номинальной нагрузкой 300 кН будет работать
-                                от
-                                600 Н
-                                (60
-                                кгс/мм2).
-                            </p>
+                            <div class="sertification_text-n-video">
+                                <p class="sertification_text">Диапазон нагрузок от 0,2% до 100% от номинального значения
+                                    датчика
+                                    измерения силы. Например, датчик силы с номинальной нагрузкой 300 кН будет работать
+                                    от
+                                    600 Н
+                                    (60
+                                    кгс/мм2).
+                                </p>
+                                <div class="sertification_video-container">
+                                    <button type="button" class="sertification_video-title"
+                                        commandfor="sertification-video-dialog" command="show-modal">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                            width="24px" fill="#1f1f1f">
+                                            <path
+                                                d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                                        </svg>
+                                        <span>Посмотреть видео испытания</span>
+                                    </button>
+                                    <dialog id="sertification-video-dialog">
+                                        <div class="sertification_video-wrapper">
+                                            <button type="submit" class="sertification_video-close"
+                                                commandfor="sertification-video-dialog" command="close"
+                                                aria-label="Закрыть">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                                                    viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                                                    <path
+                                                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                                                </svg>
+                                                <span>Закрыть</span>
+                                            </button>
+                                            <iframe
+                                                src="https://vk.com/video_ext.php?oid=-209017772&amp;id=456239130&amp;hd=2"
+                                                width="100%" height="100%"
+                                                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                                                frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </dialog>
+                                </div>
+                            </div>
                         </div>
                         <div class="sertification_btn-container-corner">
                             <div class="sertification_btn-container">
@@ -393,19 +433,59 @@
             </div>
         </section>
         <section class="gallery">
-            <div class="gallery_container" data-lenis-prevent>
-                <img class="gallery_img" src="./images/gallery1.png" alt="галерея">
-                <img class="gallery_img" src="./images/gallery2.png" alt="галерея">
-                <img class="gallery_img" src="./images/gallery3.png" alt="галерея">
-                <img class="gallery_img" src="./images/gallery4.png" alt="галерея">
+            <div class="gallery_container swiper" data-lenis-prevent>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gallery_img-wrapper">
+                            <img class="gallery_img" src="./images/gallery1.png" alt="галерея">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery_img-wrapper">
+                            <img class="gallery_img" src="./images/gallery2.png" alt="галерея">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery_img-wrapper">
+                            <img class="gallery_img" src="./images/gallery3.png" alt="галерея">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery_img-wrapper">
+                            <img class="gallery_img" src="./images/gallery4.png" alt="галерея">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery_img-wrapper">
+                            <img class="gallery_img" src="./images/gallery1.png" alt="галерея">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery_img-wrapper">
+                            <img class="gallery_img" src="./images/gallery2.png" alt="галерея">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery_img-wrapper">
+                            <img class="gallery_img" src="./images/gallery3.png" alt="галерея">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery_img-wrapper">
+                            <img class="gallery_img" src="./images/gallery4.png" alt="галерея">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="information">
             <h2 class="information_title-over">Как подобрать размер узла?</h2>
             <div class="information_container-group">
                 <div class="information-group-img information-mob">
-                    <img class="information-img" src="./images/diagram.png" alt="картинка">
-                    <img class="information-img" src="./images/diagram.png" alt="картинка">
+                    <div class="information-img-wrapper information-img-1"><img class="information-img"
+                            src="./images/scheme_1.webp" alt="картинка"></div>
+                    <div class="information-img-wrapper information-img-2"><img class="information-img"
+                            src="./images/scheme_2.webp" alt="картинка"></div>
                 </div>
                 <div class="information-group">
                     <div class="information_container">
@@ -512,12 +592,15 @@
                 </div>
                 <div class="delivery_card-width delivery_img-container corners-green-width">
                     <p class="delivery_card-title">Через маркетплейсы</p>
-                    <img class="delivery_img-ozon" src="./images/Ozon_logo_clear.png" alt="ozon">
-                    <img class="delivery_img-yandex" src="./images/yandex_logo.png" alt="yandex">
+                    <div class="delivery_img-container-group">
+                        <img class="delivery_img-wb" src="./images/wb.png" alt="ссылка на вайлдберриз">
+                        <img class="delivery_img-ozon" src="./images/Ozon_logo_clear.png" alt="ссылка на озон">
+                        <img class="delivery_img-yandex" src="./images/yandex_logo.png" alt="ссылка на яндекс">
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="order">
+        <!-- <section class="order">
             <div class="order_text-container">
                 <h2 class="order_title">Закажите качественные
                     крепежные узлы</h2>
@@ -543,7 +626,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <div class="section-bg">
             <section class="reviews">
                 <div class="reviews_container">
@@ -637,9 +720,12 @@
                         </div>
                     </div>
                     <div class="contact-us_social">
-                        <img class="corner-green-social" src="./images/vk.png" alt="vk" width="40">
-                        <img class="corner-green-social" src="./images/telegram.png" alt="telegram" width="40">
-                        <img class="corner-green-social" src="./images/max.png" alt="max" width="113">
+                        <a href="//" class="corner-green-social-link"><img class="corner-green-social"
+                                src="./images/vk.png" alt="vk" width="40"></a>
+                        <a href="//" class="corner-green-social-link"><img class="corner-green-social"
+                                src="./images/telegram.png" alt="telegram" width="40"></a>
+                        <a href="//" class="corner-green-social-link"><img class="corner-green-social"
+                                src="./images/max.png" alt="max" width="113"></a>
                     </div>
                 </div>
             </div>
@@ -673,7 +759,7 @@
             <div class="footer-container-group">
                 <div class="footer_container">
                     <div class="footer_contacts-container">
-                        <img src="./images/logo-footer.png" alt="logo" width="153">
+                        <img class="footer-logo" src="./images/logo-footer.png" alt="logo" width="260">
                         <div class="contacts_container-group">
                             <div class="contacts_info">
                                 <img class="contact-icon" src="./images/call.png" alt="call">
@@ -696,18 +782,22 @@
                             </div>
                         </div>
                         <div class="contact-us_social">
-                            <img class="corner-green-social" src="./images/vk-white.png" alt="vk" width="40">
-                            <img class="corner-green-social" src="./images/tg-white.png" alt="telegram" width="40">
-                            <img class="corner-green-social" src="./images/max-white.png" alt="max" width="113">
+                            <a href="//" class="corner-green-social-link"><img class="corner-green-social"
+                                    src="./images/vk-white.png" alt="vk" width="40"></a>
+                            <a href="//" class="corner-green-social-link"><img class="corner-green-social"
+                                    src="./images/tg-white.png" alt="telegram" width="40"></a>
+                            <a href="//" class="corner-green-social-link"><img class="corner-green-social"
+                                    src="./images/max-white.png" alt="max" width="113"></a>
                         </div>
                     </div>
                 </div>
                 <div class="delivery_card-width delivery_img-container corners-green-width">
                     <p class="delivery_card-title contacts-social-title">Всю нашу продукцию
                         можно приобрести на маркетплейсах</p>
-                    <div class="contacts_img-container-social">
-                        <img class="delivery_img-ozon" src="./images/Ozon_logo_clear.png" alt="ozon">
-                        <img class="delivery_img-yandex" src="./images/yandex_logo.png" alt="yandex">
+                    <div class="delivery_img-container-group">
+                        <img class="delivery_img-wb" src="./images/wb.png" alt="ссылка на вайлдберриз">
+                        <img class="delivery_img-ozon" src="./images/Ozon_logo_clear.png" alt="ссылка на озон">
+                        <img class="delivery_img-yandex" src="./images/yandex_logo.png" alt="ссылка на яндекс">
                     </div>
                 </div>
             </div>
@@ -727,6 +817,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script defer src="./script.js"></script>
     <script defer src="./animation.js"></script>

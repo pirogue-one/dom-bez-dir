@@ -90,10 +90,7 @@ function prevSlide() {
 }
 
 
-
-
 // pop-up
-
 
 const closeBtnPopUp = document.querySelector('#close-pop-up-phone');
 const modalMenuPopUp = document.querySelector('.modal_menu-pop-up-phone');
@@ -119,3 +116,49 @@ popUpHero.addEventListener('click', () => {
 closeBtnPopUpHero.addEventListener('click', () => {
     modalMenuPopUpHero.style.display = 'none';
 })
+
+
+//information section scroll
+
+const img1 = document.querySelector('.information-img-1');
+const img2 = document.querySelector('.information-img-2');
+const trigger = document.querySelector('.information_container:nth-child(2)'); // второй контейнер с инструкцией
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    const entry = entries[0];
+    if (entry.isIntersecting) {
+      // второй контейнер вошёл в зону — показываем вторую картинку
+      img1.style.opacity = '0';
+      img2.style.opacity = '1';
+    } else if (entry.boundingClientRect.top > 0) {
+      // вышел снизу (пользователь прокрутил вверх) — возвращаем первую
+      img1.style.opacity = '1';
+      img2.style.opacity = '0';
+    }
+    // если top < 0 — вышел вверху (пролистали дальше) — ничего не делаем, img2 остаётся
+  },
+  { rootMargin: '0px 0px -40% 0px', threshold: 0 }
+);
+observer.observe(trigger);
+
+
+// gallery swiper
+
+const galleryEl = document.querySelector('.gallery_container');
+
+if (galleryEl && typeof Swiper !== 'undefined') {
+  new Swiper(galleryEl, {
+    slidesPerView: 3,
+    centeredSlides: true,
+    loop: true,
+    speed: 600,
+    spaceBetween: 20,
+    grabCursor: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+  });
+}
