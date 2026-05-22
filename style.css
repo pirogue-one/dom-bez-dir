@@ -526,7 +526,7 @@ section {
 
 .patent-title {
     font-weight: 600;
-    font-size: 4rem;
+    font-size: 64px;
     line-height: 112.00000000000001%;
     letter-spacing: -1.3px;
     color: #404040;
@@ -534,6 +534,23 @@ section {
 
 .patent-title-mob {
     display: none;
+}
+
+.patent-word {
+    display: inline-block;
+    min-width: 12ch;
+}
+
+.patent-word::after {
+    content: '|';
+    margin-left: 2px;
+    animation: patent-word-blink 1s step-end infinite;
+}
+
+@keyframes patent-word-blink {
+    50% {
+        opacity: 0;
+    }
 }
 
 .patent-dash_img {
@@ -662,6 +679,11 @@ section {
     display: flex;
     gap: 0.438rem;
     align-items: center;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
 }
 
 .sertification_btn-img {
@@ -762,7 +784,8 @@ section {
     color: #3BAA34;
 }
 
-#sertification-video-dialog {
+#sertification-video-dialog,
+#sertification-cert-dialog {
     border: none;
     padding: 1rem;
     background: none;
@@ -770,8 +793,16 @@ section {
     height: 100%;
 }
 
-#sertification-video-dialog::backdrop {
+#sertification-video-dialog::backdrop,
+#sertification-cert-dialog::backdrop {
     background: rgba(0, 0, 0, 0.8);
+}
+
+.sertification_cert-img {
+    max-height: 85vh;
+    width: auto;
+    display: block;
+    border-radius: 4px;
 }
 
 .sertification_video-wrapper {

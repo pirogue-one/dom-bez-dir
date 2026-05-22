@@ -323,7 +323,7 @@
         </section>
         <section class="patent">
             <h2 class="patent-title patent-title-desktop">Крепежные узлы&nbsp;&nbsp;<img class="patent-dash_img"
-                    src="./images/dash.png" alt="тире">&nbsp;&nbsp;надежные скрепляющие элементы</h2>
+                    src="./images/dash.png" alt="тире">&nbsp;&nbsp;<span class="patent-word">надежные</span><br/>скрепляющие элементы</h2>
             <h2 class="patent-title patent-title-mob">Крепежные узлы&nbsp;—&nbsp;надежные&nbsp;&nbsp;<img
                     class="patent-dash_img" src="./images/dash.png" alt="тире">&nbsp;&nbsp;скрепляющие элементы</h2>
             <div class="patent_container">
@@ -423,10 +423,27 @@
                             </div>
                         </div>
                         <div class="sertification_btn-container-corner">
-                            <div class="sertification_btn-container">
+                            <button type="button" class="sertification_btn-container"
+                                commandfor="sertification-cert-dialog" command="show-modal">
                                 <img class="sertification_btn-img" src="./images/search.png" alt="сертификация">
                                 <p class="sertification_btn-text">Смотреть документ</p>
-                            </div>
+                            </button>
+                            <dialog id="sertification-cert-dialog">
+                                <div class="sertification_video-wrapper">
+                                    <button type="submit" class="sertification_video-close"
+                                        commandfor="sertification-cert-dialog" command="close"
+                                        aria-label="Закрыть">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                                            viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                                            <path
+                                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                                        </svg>
+                                        <span>Закрыть</span>
+                                    </button>
+                                    <img class="sertification_cert-img" src="./images/certificate_gost.jpg"
+                                        alt="Сертификат соответствия">
+                                </div>
+                            </dialog>
                         </div>
                     </div>
                 </div>

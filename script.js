@@ -162,3 +162,54 @@ if (galleryEl && typeof Swiper !== 'undefined') {
     },
   });
 }
+
+
+// patent title — смена слова побуквенно
+
+const patentWordEl = document.querySelector('.patent-title-desktop .patent-word');
+
+if (patentWordEl) {
+  const patentWords = ['надежные', 'инновационные', 'прочные', 'экологичные'];
+  let patentWordIndex = 0;
+  const typeSpeed = 80;
+  const eraseSpeed = 50;
+  const pauseMs = 2500;
+
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const typeWord = (word) =>
+    new Promise((resolve) => {
+      let i = 0;
+      patentWordEl.textContent = '';
+      const interval = setInterval(() => {
+        patentWordEl.textContent += word[i];
+        i += 1;
+        if (i >= word.length) {
+          clearInterval(interval);
+          resolve();
+        }
+      }, typeSpeed);
+    });
+
+  const eraseWord = () =>
+    new Promise((resolve) => {
+      const interval = setInterval(() => {
+        patentWordEl.textContent = patentWordEl.textContent.slice(0, -1);
+        if (!patentWordEl.textContent) {
+          clearInterval(interval);
+          resolve();
+        }
+      }, eraseSpeed);
+    });
+
+  const cyclePatentWords = async () => {
+    while (true) {
+      await wait(pauseMs);
+      await eraseWord();
+      patentWordIndex = (patentWordIndex + 1) % patentWords.length;
+      await typeWord(patentWords[patentWordIndex]);
+    }
+  };
+
+  cyclePatentWords();
+}
