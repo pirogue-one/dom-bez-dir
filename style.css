@@ -2298,12 +2298,12 @@ hr {
 
 
     .patent_container-img::-webkit-scrollbar-thumb:horizontal {
-        background: #009A73;
+        background: #3BAA34;
         border-radius: 10px;
     }
 
     .patent_container-img::-webkit-scrollbar-thumb:hover {
-        background: #009A73;
+        background: #3BAA34;
     }
 
     .patent {
@@ -2452,7 +2452,7 @@ hr {
     }
 
     .hero_container {
-        padding: 0 0.625rem 5.438rem;
+        padding: 5rem 0.625rem 5rem;
         gap: 0.5rem;
     }
 
@@ -2621,17 +2621,24 @@ hr {
     .sertification_container-text {
         padding: 3.75rem 0.625rem;
         flex-direction: column;
+        align-items: flex-start;
         gap: 1rem;
     }
 
     .sertification_text {
         font-size: 0.8rem;
+        max-width: none;
+        text-align: left;
     }
 
     .sertification_btn-container-corner {
-        bottom: 7px;
-        right: 0;
+        bottom: 10%;
+        right: 50%;
         width: 158px;
+    }
+
+    .sertification_video-container {
+        margin: 20px 0;
     }
 
     .sertification_btn-img {
@@ -2643,7 +2650,10 @@ hr {
     }
 
     .sertification_img {
-        display: none;
+        position: static;
+        width: 300px;
+        transform: none;
+        align-self: center;
     }
 
     .sertification_title {
@@ -2668,7 +2678,11 @@ hr {
     }
 
     .contacts {
+        flex-direction: column;
         gap: 2.25rem;
+    }
+    .contacts_container, .contacts iframe {
+        width: 100%;
     }
 
     .contacts_title {
@@ -2676,6 +2690,7 @@ hr {
     }
 
     .delivery_card-container {
+        display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
     }
@@ -2697,11 +2712,12 @@ hr {
     }
 
     .footer_contacts-container>img {
-        width: 140px;
+        width: 230px;
     }
 
     .footer-container-group {
         flex-direction: column;
+        gap: 60px;
     }
 
     .title-popup {
@@ -2791,4 +2807,49 @@ hr {
         padding: 0;
     }
 
+    .title-over-fixed-wrapper {
+        position: static;
+    }
+    .title-over-fixed {
+        position: static;
+        margin-bottom: 0;
+    }
+    .goods_text-container-fixed {
+        padding-top: 8px;
+        position: static;
+    }
+    .goods {
+        gap: 0;
+    }
+    .goods_container-group {
+        gap: 20px;
+    }
+    .goods_container-group:not(:last-child) {
+        margin-bottom: 40px; 
+    }
+    .gallery_container {
+        height: 176px !important;
+    }
+    .information_container-group {
+        flex-direction: column;
+    }
+    .information-group-img {
+        width: 100%; 
+    }
+    .delivery_img-container-group {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contacts iframe {
+        height: 250px;
+    }
+    .footer .delivery_card-width {
+        width: 100%;
+    }
+    .contact-us_social {
+        padding: 0;
+    }
+    .information-group {
+        width: 100%;
+    }
 }
