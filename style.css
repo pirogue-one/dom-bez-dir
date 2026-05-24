@@ -2157,6 +2157,15 @@ hr {
 }
 
 
+.mob-hidden {
+    display: flex;
+}
+
+.desk-hidden {
+    display: none;
+}
+
+
 
 @media (min-width: 1441px) {
 
@@ -2933,5 +2942,50 @@ hr {
 
     .reviews-swiper .swiper-slide {
         display: block !important;
+    }
+
+    .delivery_img-container-group {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer_text-group {
+        flex-direction: column;
+    }
+
+    .mob-hidden {
+        display: none;
+    }
+
+    .desk-hidden {
+        display: flex;
+    }
+
+    .information_title-over {
+        position: static;
+    }
+
+    .information_cards {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .cards_goods {
+        flex-direction: column;
+    }
+
+    .card_goods {
+        width: 100%;
+    }
+
+    .advantages_cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .patent_container {
+        padding: 1rem;
     }
 }
