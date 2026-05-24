@@ -2621,6 +2621,7 @@ hr {
 
     .cards_goods {
         gap: 0.75rem;
+        width: 100%;
     }
 
     .advantages_container {
@@ -2782,6 +2783,7 @@ hr {
 
     .goods_text-container {
         gap: 0.375rem;
+        width: 100%;
     }
 
     .reviews_container {
