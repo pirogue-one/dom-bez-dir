@@ -7,11 +7,11 @@ const modalMenu = document.querySelector('.modal_menu');
 const mobMenu = document.querySelector('#menu');
 
 mobMenu.addEventListener('click', () => {
-    modalMenu.style.display = 'flex';
+  modalMenu.style.display = 'flex';
 });
 
 closeBtn.addEventListener('click', () => {
-    modalMenu.style.display = 'none';
+  modalMenu.style.display = 'none';
 })
 
 
@@ -63,7 +63,7 @@ popup.addEventListener('touchend', function (event) {
 
 function handleGesture() {
   if (touchendX < touchstartX) {
-      nextSlide();
+    nextSlide();
   }
 
   if (touchendX > touchstartX) {
@@ -97,11 +97,11 @@ const modalMenuPopUp = document.querySelector('.modal_menu-pop-up-phone');
 const popUp = document.querySelector('#link-popup');
 
 popUp.addEventListener('click', () => {
-    modalMenuPopUp.style.display = 'flex';
+  modalMenuPopUp.style.display = 'flex';
 });
 
 closeBtnPopUp.addEventListener('click', () => {
-    modalMenuPopUp.style.display = 'none';
+  modalMenuPopUp.style.display = 'none';
 })
 
 
@@ -110,11 +110,11 @@ const modalMenuPopUpHero = document.querySelector('.modal_menu-pop-up');
 const popUpHero = document.querySelector('#link-popup-hero');
 
 popUpHero.addEventListener('click', () => {
-    modalMenuPopUpHero.style.display = 'flex';
+  modalMenuPopUpHero.style.display = 'flex';
 });
 
 closeBtnPopUpHero.addEventListener('click', () => {
-    modalMenuPopUpHero.style.display = 'none';
+  modalMenuPopUpHero.style.display = 'none';
 })
 
 
@@ -149,16 +149,27 @@ const galleryEl = document.querySelector('.gallery_container');
 
 if (galleryEl && typeof Swiper !== 'undefined') {
   new Swiper(galleryEl, {
-    slidesPerView: 3,
-    centeredSlides: true,
     loop: true,
     speed: 600,
-    spaceBetween: 20,
     grabCursor: true,
+  
     autoplay: {
-      delay: 3000,
+      delay: 1500,              // быстрее, как было
       disableOnInteraction: false,
-      pauseOnMouseEnter: true,
+      pauseOnMouseEnter: false, // чтобы не залипало на десктопе
+    },
+  
+    breakpoints: {
+      0: {
+        slidesPerView: 2,       // мобилка
+        centeredSlides: false,
+        spaceBetween: 12,
+      },
+      790: {
+        slidesPerView: 3,       // десктоп
+        centeredSlides: true,
+        spaceBetween: 20,
+      },
     },
   });
 }
